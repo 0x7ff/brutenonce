@@ -128,9 +128,10 @@ main(int argc, const char **argv)
 			break;
 		case 3:
 			ASSERT(sscanf(argv[2], "%x", &w0) == 1);
+			w0 = __builtin_bswap32(w0);
 			break;
 		default:
-			printf("Usage: %s SHA-1 w0\n", argv[0]);
+			printf("Usage: %s SHA-1 [w0]\n", argv[0]);
 			return 0;
 	}
 		
